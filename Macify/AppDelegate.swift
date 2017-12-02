@@ -1,27 +1,22 @@
-//
-//  AppDelegate.swift
-//  Macify
-//
-//  Created by Colin Marsch on 2017-12-02.
-//  Copyright © 2017 Colin Marsch. All rights reserved.
-//
-
 import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet weak var window: NSWindow!
+    @IBOutlet weak var statusMenu: NSMenu!
+    
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
-
+    @IBAction func quitPressed(_ sender: Any) {
+        NSApplication.shared.terminate(self)
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        statusItem.title = "Macify"
+        statusItem.menu = statusMenu
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-
 }
-
