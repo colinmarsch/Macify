@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5366C741FDC841900A59703 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5366C731FDC841900A59703 /* StatusMenuController.swift */; };
+		E5366C781FDC8AFC00A59703 /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5366C771FDC8AFC00A59703 /* SongView.swift */; };
 		E5690C321FD359A900D6F4C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5690C311FD359A900D6F4C1 /* AppDelegate.swift */; };
 		E5690C341FD359A900D6F4C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5690C331FD359A900D6F4C1 /* Assets.xcassets */; };
 		E5690C371FD359A900D6F4C1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5690C351FD359A900D6F4C1 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E5366C731FDC841900A59703 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		E5366C771FDC8AFC00A59703 /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
 		E5690C2E1FD359A900D6F4C1 /* Macify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5690C311FD359A900D6F4C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5690C331FD359A900D6F4C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +36,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5366C751FDC842100A59703 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5366C731FDC841900A59703 /* StatusMenuController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		E5366C761FDC8ACC00A59703 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E5366C771FDC8AFC00A59703 /* SongView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		E5690C251FD359A900D6F4C1 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +71,8 @@
 		E5690C301FD359A900D6F4C1 /* Macify */ = {
 			isa = PBXGroup;
 			children = (
+				E5366C761FDC8ACC00A59703 /* view */,
+				E5366C751FDC842100A59703 /* controller */,
 				E5690C311FD359A900D6F4C1 /* AppDelegate.swift */,
 				E5690C331FD359A900D6F4C1 /* Assets.xcassets */,
 				E5690C351FD359A900D6F4C1 /* MainMenu.xib */,
@@ -131,6 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5366C781FDC8AFC00A59703 /* SongView.swift in Sources */,
+				E5366C741FDC841900A59703 /* StatusMenuController.swift in Sources */,
 				E5690C321FD359A900D6F4C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

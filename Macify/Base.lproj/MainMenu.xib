@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -10,23 +11,85 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Macify" customModuleProvider="target">
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Macify" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="nxB-cN-JRr" customClass="StatusMenuController" customModule="Macify" customModuleProvider="target">
             <connections>
-                <outlet property="statusMenu" destination="bWG-PS-8kZ" id="3ki-Y9-TcW"/>
+                <outlet property="songView" destination="9D5-3n-zz6" id="UPH-18-FFv"/>
+                <outlet property="statusMenu" destination="bWG-PS-8kZ" id="Ugy-c0-tH1"/>
             </connections>
         </customObject>
-        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="bWG-PS-8kZ">
             <items>
-                <menuItem title="Quit" id="heM-nZ-LPz">
+                <menuItem title="Song" state="on" id="e7e-U5-0fh">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Quit" id="tKd-8L-cpk">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quitPressed:" target="Voe-Tx-rLC" id="552-4b-B9u"/>
+                        <action selector="quitPressed:" target="nxB-cN-JRr" id="WUz-0k-sdV"/>
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="80" y="-85"/>
+            <point key="canvasLocation" x="-354.5" y="-247.5"/>
         </menu>
+        <customView id="9D5-3n-zz6" customClass="SongView" customModule="Macify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="244" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3R-oM-VRx">
+                    <rect key="frame" x="-2" y="60" width="248" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Song Title" id="igT-nq-0mi">
+                        <font key="font" metaFont="system" size="16"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-FV-hWR">
+                    <rect key="frame" x="20" y="4" width="48" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarRewindTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="GVn-jA-RDK">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBO-Fr-1FE">
+                    <rect key="frame" x="98" y="4" width="48" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarPlayPauseTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="8y4-14-3C3">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2n-3O-KfX">
+                    <rect key="frame" x="176" y="4" width="48" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarFastForwardTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="JSa-D1-bJP">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljc-u6-pci">
+                    <rect key="frame" x="77" y="90" width="90" height="90"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Vjc-xA-fWC"/>
+                </imageView>
+            </subviews>
+            <connections>
+                <outlet property="albumImage" destination="ljc-u6-pci" id="kvc-LI-tUc"/>
+                <outlet property="backButton" destination="AA6-FV-hWR" id="4P5-VL-aBF"/>
+                <outlet property="forwardButton" destination="M2n-3O-KfX" id="J4u-hQ-9gA"/>
+                <outlet property="playPauseButton" destination="jBO-Fr-1FE" id="Zgs-lq-Abk"/>
+                <outlet property="titleLabel" destination="F3R-oM-VRx" id="pf1-8o-FVT"/>
+            </connections>
+            <point key="canvasLocation" x="-355" y="-7"/>
+        </customView>
     </objects>
+    <resources>
+        <image name="NSTouchBarFastForwardTemplate" width="22" height="30"/>
+        <image name="NSTouchBarPlayPauseTemplate" width="23" height="30"/>
+        <image name="NSTouchBarRewindTemplate" width="22" height="30"/>
+    </resources>
 </document>
