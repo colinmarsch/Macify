@@ -1,9 +1,11 @@
 import Cocoa
+import Kingfisher
 
-class StatusMenuController: NSObject {
+class StatusMenuController: NSObject, OnGetCurrentTrackListener {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var songView: SongView!
     var songMenuItem: NSMenuItem!
+    var spotifyAPI = SpotifyAPI()
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
@@ -16,5 +18,19 @@ class StatusMenuController: NSObject {
     
     @IBAction func quitPressed(_ sender: Any) {
         NSApplication.shared.terminate(self)
+    }
+    
+    @IBAction func authorizePressed(_ sender: Any) {
+        spotifyAPI.setup(statusMenuController: self)
+    }
+    
+    func onSuccess(currentTrack: CurrentTrack) {
+        songView.titleLabel.stringValue = currentTrack.title! + " - " + currentTrack.artist!
+        let url = URL(string: currentTrack.artworkURL!)
+        songView.albumImage.kf.setImage(with: url)
+    }
+    
+    func onFailure(reason: String) {
+        //handle the error here
     }
 }

@@ -22,6 +22,12 @@
         </customObject>
         <menu id="bWG-PS-8kZ">
             <items>
+                <menuItem title="Login with Spotify" id="M53-Bs-8eq">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="authorizePressed:" target="nxB-cN-JRr" id="vKY-1k-7Wb"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Song" state="on" id="e7e-U5-0fh">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
@@ -32,16 +38,16 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-354.5" y="-247.5"/>
+            <point key="canvasLocation" x="-427" y="-271"/>
         </menu>
         <customView id="9D5-3n-zz6" customClass="SongView" customModule="Macify" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="244" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3R-oM-VRx">
-                    <rect key="frame" x="-2" y="60" width="248" height="22"/>
+                    <rect key="frame" x="-2" y="44" width="248" height="38"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Song Title" id="igT-nq-0mi">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Song Title" id="igT-nq-0mi">
                         <font key="font" metaFont="system" size="16"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

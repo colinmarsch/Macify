@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		063017F10872B64A1C10EC57 /* Pods_Macify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94334BEA6ABED59C8EE67393 /* Pods_Macify.framework */; };
+		E530AF1A1FDDB8A30052C145 /* SpotifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530AF191FDDB8A30052C145 /* SpotifyAPI.swift */; };
+		E530AF1D1FDDBA8D0052C145 /* OnGetCurrentTrackListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530AF1C1FDDBA8D0052C145 /* OnGetCurrentTrackListener.swift */; };
+		E530AF201FDDBADA0052C145 /* CurrentTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530AF1F1FDDBADA0052C145 /* CurrentTrack.swift */; };
 		E5366C741FDC841900A59703 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5366C731FDC841900A59703 /* StatusMenuController.swift */; };
 		E5366C781FDC8AFC00A59703 /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5366C771FDC8AFC00A59703 /* SongView.swift */; };
 		E5690C321FD359A900D6F4C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5690C311FD359A900D6F4C1 /* AppDelegate.swift */; };
@@ -19,6 +22,9 @@
 		66B8E75AF112441A381E0004 /* Pods-Macify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Macify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Macify/Pods-Macify.release.xcconfig"; sourceTree = "<group>"; };
 		94334BEA6ABED59C8EE67393 /* Pods_Macify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Macify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B75289C50644F1F2007AA4 /* Pods-Macify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Macify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Macify/Pods-Macify.debug.xcconfig"; sourceTree = "<group>"; };
+		E530AF191FDDB8A30052C145 /* SpotifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPI.swift; sourceTree = "<group>"; };
+		E530AF1C1FDDBA8D0052C145 /* OnGetCurrentTrackListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGetCurrentTrackListener.swift; sourceTree = "<group>"; };
+		E530AF1F1FDDBADA0052C145 /* CurrentTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTrack.swift; sourceTree = "<group>"; };
 		E5366C731FDC841900A59703 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		E5366C771FDC8AFC00A59703 /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
 		E5690C2E1FD359A900D6F4C1 /* Macify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +64,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E530AF181FDDB86F0052C145 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				E530AF191FDDB8A30052C145 /* SpotifyAPI.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		E530AF1B1FDDBA590052C145 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E530AF1C1FDDBA8D0052C145 /* OnGetCurrentTrackListener.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		E530AF1E1FDDBACB0052C145 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E530AF1F1FDDBADA0052C145 /* CurrentTrack.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		E5366C751FDC842100A59703 /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +125,9 @@
 		E5690C301FD359A900D6F4C1 /* Macify */ = {
 			isa = PBXGroup;
 			children = (
+				E530AF1E1FDDBACB0052C145 /* model */,
+				E530AF1B1FDDBA590052C145 /* protocol */,
+				E530AF181FDDB86F0052C145 /* service */,
 				E5366C761FDC8ACC00A59703 /* view */,
 				E5366C751FDC842100A59703 /* controller */,
 				E5690C311FD359A900D6F4C1 /* AppDelegate.swift */,
@@ -183,11 +216,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Macify/Pods-Macify-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftHTTP/SwiftHTTP.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHTTP.framework",
 			);
@@ -238,7 +273,10 @@
 			files = (
 				E5366C781FDC8AFC00A59703 /* SongView.swift in Sources */,
 				E5366C741FDC841900A59703 /* StatusMenuController.swift in Sources */,
+				E530AF1D1FDDBA8D0052C145 /* OnGetCurrentTrackListener.swift in Sources */,
 				E5690C321FD359A900D6F4C1 /* AppDelegate.swift in Sources */,
+				E530AF1A1FDDB8A30052C145 /* SpotifyAPI.swift in Sources */,
+				E530AF201FDDBADA0052C145 /* CurrentTrack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
