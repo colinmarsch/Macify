@@ -60,6 +60,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="backPressed:" target="9D5-3n-zz6" id="ZxX-qD-uhf"/>
+                    </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBO-Fr-1FE">
                     <rect key="frame" x="98" y="4" width="48" height="48"/>
@@ -68,6 +71,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="playPausePressed:" target="9D5-3n-zz6" id="qV3-dA-4oR"/>
+                    </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2n-3O-KfX">
                     <rect key="frame" x="176" y="4" width="48" height="48"/>
@@ -76,6 +82,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="forwardPressed:" target="9D5-3n-zz6" id="0vf-X7-PuU"/>
+                    </connections>
                 </button>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljc-u6-pci">
                     <rect key="frame" x="77" y="90" width="90" height="90"/>

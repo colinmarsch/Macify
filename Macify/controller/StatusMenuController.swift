@@ -5,7 +5,7 @@ class StatusMenuController: NSObject, OnGetCurrentTrackListener {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var songView: SongView!
     var songMenuItem: NSMenuItem!
-    var spotifyAPI = SpotifyAPI()
+    var spotifyAPI = SpotifyAPI.singleton
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
