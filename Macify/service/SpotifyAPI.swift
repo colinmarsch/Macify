@@ -53,6 +53,9 @@ class SpotifyAPI: NSObject {
                 var album = item["album"] as! [String : Any]
                 var imagesArray = album["images"] as! [[String : Any]]
                 currentTrack.artworkURL = (imagesArray[0]["url"] as! String)
+                let songLength = item["duration_ms"] as! Double
+                let currentProgress = jsonDict!["progress_ms"] as! Double
+                currentTrack.remainingTime = songLength - currentProgress
                 self.isPlaying = jsonDict!["is_playing"] as! Bool
                 onGetCurrentTrackListener.onSuccess(currentTrack: currentTrack)
             },

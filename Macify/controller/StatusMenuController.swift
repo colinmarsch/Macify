@@ -25,6 +25,10 @@ class StatusMenuController: NSObject, OnGetCurrentTrackListener {
     }
     
     func onSuccess(currentTrack: CurrentTrack) {
+        let remainingTimeSeconds = (currentTrack.remainingTime! / 1000) + 1
+        Timer.scheduledTimer(withTimeInterval: remainingTimeSeconds, repeats: false, block: { timer in
+            self.spotifyAPI.getCurrentTrack(onGetCurrentTrackListener: self)
+        })
         songView.titleLabel.stringValue = currentTrack.title! + " - " + currentTrack.artist!
         let url = URL(string: currentTrack.artworkURL!)
         songView.albumImage.kf.setImage(with: url)
